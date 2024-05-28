@@ -1,3 +1,27 @@
+export const sidebarLinks = [
+  {
+    imageUrl: "/icons/home.svg",
+    label: "Home",
+    route: "/"
+  },
+  {
+    imageUrl: "/icons/bank.svg",
+    label: "My Banks",
+    route: "/my-banks"
+  },
+  {
+    imageUrl: "/icons/transaction.svg",
+    label: "Transaction History",
+    route: "/transaction-history"
+  },
+  {
+    imageUrl: "/icons/transfers.svg",
+    label: "Transfer funds",
+    route: "/transfer-funds"
+  },
+]
+
+
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
