@@ -21,7 +21,16 @@ const Sidebar = ({user}:SiderbarProps) => {
                     Muslim Marketplace
                 </h1>
             </Link>
-            {sidebarLinks}
+            {sidebarLinks.map((link, index) => (
+                return (
+                <Link
+                    key={index}
+                    href={link.href}
+                    className="flex items-center gap-2"
+                >
+                    )
+                    )
+            }
         </nav> 
     </section>
   )
