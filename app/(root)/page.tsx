@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderBox from "../../components/HeaderBox";
 import TotalBalanceBox from "../../components/TotalBalanceBox";
+import RightSidebar from "../../components/RightSidebar";
 
  function Home() {
   const loggedIn = {firstName: 'Ahsen'};
@@ -22,7 +23,14 @@ import TotalBalanceBox from "../../components/TotalBalanceBox";
           
           />
         </header> 
+        Recent Transactions
       </div>
+      <RightSidebar 
+        user={loggedIn}
+        transactions={[]}
+        banks={[]}
+      ></RightSidebar>
+
     </section>
   );
 }

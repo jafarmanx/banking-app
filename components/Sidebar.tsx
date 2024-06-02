@@ -52,7 +52,6 @@ const Sidebar = ({user}:SidebarProps) => {
                 }
                 USER
             </nav> 
-
             FOOTER
         </section>
     )
