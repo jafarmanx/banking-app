@@ -14,7 +14,7 @@ const sidebarLinks = [
       route: "/"
     },
     {
-      imageUrl: "/icons/bank.svg",
+      imageUrl: "/icons/bank-transfer.svg",
       label: "My Banks",
       route: "/my-banks"
     },
@@ -24,7 +24,7 @@ const sidebarLinks = [
       route: "/transaction-history"
     },
     {
-      imageUrl: "/icons/transfers.svg",
+      imageUrl: "/icons/payment-transfer.svg",
       label: "Transfer funds",
       route: "/transfer-funds"
     },
@@ -40,7 +40,7 @@ const Sidebar = ({user}:SidebarProps) => {
             <nav className='flex flex-col gap-4'>
                 <Link 
                     href="/"
-                    className="mb-12 cursor-pointer items-center gap-2"   
+                    className="mb-12 cursor-pointer flex items-center gap-2"   
                 >
                     <Image 
                         src="/icons/logo.svg"
@@ -49,9 +49,7 @@ const Sidebar = ({user}:SidebarProps) => {
                         alt="Bank Logo"
                         className="size-[24px] xl:size-14"
                     />
-                    <h1 className='sidebar-logo'>
-                        Muslim Marketplace
-                    </h1>
+                    <h1 className='sidebar-logo'> Muslim Marketplace </h1>
                 </Link>
                 {  sidebarLinks.map((item) => {                     
                         const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
@@ -59,15 +57,28 @@ const Sidebar = ({user}:SidebarProps) => {
                                 <Link 
                                     href={item.route} 
                                     key={item.label}
-                                    className={cn('sidebar-link', {'bg-bank-graident':isActive})}
+                                    className={cn('sidebar-link', {'bg-bank-gradient':isActive})}
                                 >
-                                    {item.label}
+                                    <div className="relative size-6">
+                                        <Image 
+                                            src={item.imageUrl}
+                                            alt={item.label}
+                                            fill
+                                            className={cn({'brightness-[3] invert-0':isActive})}
+                                        />
+                                    </div>
+                                    <p className={cn("sidebar-label", { "!text-white": isActive })}>
+                                        {item.label}
+                                    </p>
                                 </Link>
                             )
                         }
                     )
                 }
+                USER
             </nav> 
+
+            FOOTER
         </section>
     )
 }
