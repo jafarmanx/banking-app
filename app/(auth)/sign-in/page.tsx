@@ -1,10 +1,11 @@
 import React from "react";
-    
+import AuthFourm from "../../../components/AuthFourm";
+
 function SignIn() {
     return (
-        <div>
-           <h1>Sign In</h1>
-        </div>
+        <section className="flex-center size-full max-sm:px-6">
+            <AuthFourm type="sign-in"/>
+        </section>
     );
 }
 
