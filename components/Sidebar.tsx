@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { cn } from '../lib/utils';
+import { cn } from '../src/lib/utils';
 import { usePathname } from 'next/navigation';
 import { sidebarLinks } from '../constants/index';
 

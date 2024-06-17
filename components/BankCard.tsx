@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { formatAmount } from '../lib/utils'
+import { formatAmount } from '../src/lib/utils'
 import Image from 'next/image'
 
 const BankCard = ({account, userName, showBalance=ture}:CreditCardProps) => {

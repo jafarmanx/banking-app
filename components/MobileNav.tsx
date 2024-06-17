@@ -8,7 +8,7 @@ import {
 } from "../components//ui/sheet"
 import Image from 'next/image'
 import Link from 'next/link'
-import { cn } from '../lib/utils'
+import { cn } from '../src/lib/utils'
 import { sidebarLinks } from '../constants/index'
 import { usePathname } from 'next/navigation';
 

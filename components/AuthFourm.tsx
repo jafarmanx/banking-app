@@ -3,10 +3,42 @@ import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import CustomInput from "../components/CustomInput"
 
+
+const formSchema = z.object({
+    email: z.string().email()
+  })
+
+  
 const AuthFourm = ({type}:{type: string}) => {
     
     const [user, setUser] = useState(null);
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+          email: "",
+        },
+      })
+     
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        console.log(values)
+    }
 
     return (
         <section className="auth-form">
@@ -46,7 +78,18 @@ const AuthFourm = ({type}:{type: string}) => {
                 </div>
             ): (
                 <>
-                 Fourm
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                            <CustomInput
+                                form={form}
+                                name="email"
+                                label="email"
+                                description="Put your email here"
+                                placeholder="myemail@gmail.com"
+                            />
+                            <Button type="submit">Submit</Button>
+                        </form>
+                    </Form>
                 </>
             )
             }
