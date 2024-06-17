@@ -7,16 +7,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import { Form } from "@/components/ui/form"
 import CustomInput from "../components/CustomInput"
 
 
@@ -86,6 +77,13 @@ const AuthFourm = ({type}:{type: string}) => {
                                 label="email"
                                 description="Put your email here"
                                 placeholder="myemail@gmail.com"
+                            />
+                            <CustomInput
+                                form={form}
+                                name="password"
+                                label="password"
+                                description="Put your password here"
+                                placeholder="password"
                             />
                             <Button type="submit">Submit</Button>
                         </form>
